@@ -2,7 +2,7 @@ import React from "react";
 
 const App = () => {
   return (
-    <div className="flex text-center justify-center h-screen py-4 bg-[#5A5A5A]">
+    <div className="flex text-center justify-center h-screen py-4 bg-gradient-to-tr from-[#2193b0] to-[#ffc3a0]">
       <div>
         <h1 className="text-4xl text-white font-bold shadow-sm">
           Movie Schedule
