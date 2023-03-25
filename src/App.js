@@ -28,8 +28,8 @@ const App = () => {
   }, [api_key]);
 
   return (
-    <div className="flex text-center justify-center h-screen py-4 bg-gradient-to-tr from-[#2193b0] to-[#ffc3a0]">
-      <div>
+    <div className="flex  justify-center h-screen py-4 bg-gradient-to-tr from-[#2193b0] to-[#ffc3a0]">
+      <div className="text-center">
         <h1 className="text-4xl text-white font-bold shadow-sm">
           Movie Schedule
         </h1>
@@ -51,7 +51,9 @@ const App = () => {
             </button>
           </form>
         </div>
-        <div className=""></div>
+      </div>
+      <div className="max-w-[1240px] mx-auto py-16 px-4 text-center">
+        <h1>Movies</h1>
       </div>
     </div>
   );
