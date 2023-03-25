@@ -28,7 +28,7 @@ const App = () => {
   }, [api_key]);
 
   return (
-    <div className="h-screen py-4 bg-gradient-to-tr from-[#2193b0] to-[#ffc3a0]">
+    <div className="h-full py-4 bg-gradient-to-tr from-[#2193b0] to-[#ffc3a0]">
       <div className="flex justify-center flex-col text-center">
         <h1 className="text-4xl text-white font-bold">Movie Schedule</h1>
         <div>
@@ -50,8 +50,168 @@ const App = () => {
           </form>
         </div>
       </div>
-      <h1 className="font-bold text-4xl px-10 text-white">Movies</h1>
-      <div className="max-w-[1240px] mx-auto py-16 px-4 text-left">
+      <h1 className="font-bold text-4xl px-10 text-white mx-auto">Movies</h1>
+      <div className="max-w-[1240px] mx-auto py-16 px-8 text-left grid grid-rows-none md:grid-cols-5 gap-2 md:gap-4">
+        <div className="h-full">
+          <div>
+            <img
+              src="https://cdn.staticneo.com/w/naruto/Nprofile2.jpg"
+              alt="/"
+            />
+          </div>
+          <div>
+            <h3>Naruto Shippuedin</h3>
+            <p>Rating 6.9</p>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
+              ullam.
+            </p>
+            <p>Release Date: 15 February 2007</p>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <img
+              src="https://cdn.staticneo.com/w/naruto/Nprofile2.jpg"
+              alt="/"
+            />
+          </div>
+          <div>
+            <h3>Naruto Shippuedin</h3>
+            <p>Rating 6.9</p>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
+              ullam.
+            </p>
+            <p>Release Date: 15 February 2007</p>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <img
+              src="https://cdn.staticneo.com/w/naruto/Nprofile2.jpg"
+              alt="/"
+            />
+          </div>
+          <div>
+            <h3>Naruto Shippuedin</h3>
+            <p>Rating 6.9</p>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
+              ullam.
+            </p>
+            <p>Release Date: 15 February 2007</p>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <img
+              src="https://cdn.staticneo.com/w/naruto/Nprofile2.jpg"
+              alt="/"
+            />
+          </div>
+          <div>
+            <h3>Naruto Shippuedin</h3>
+            <p>Rating 6.9</p>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
+              ullam.
+            </p>
+            <p>Release Date: 15 February 2007</p>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <img
+              src="https://cdn.staticneo.com/w/naruto/Nprofile2.jpg"
+              alt="/"
+            />
+          </div>
+          <div>
+            <h3>Naruto Shippuedin</h3>
+            <p>Rating 6.9</p>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
+              ullam.
+            </p>
+            <p>Release Date: 15 February 2007</p>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <img
+              src="https://cdn.staticneo.com/w/naruto/Nprofile2.jpg"
+              alt="/"
+            />
+          </div>
+          <div>
+            <h3>Naruto Shippuedin</h3>
+            <p>Rating 6.9</p>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
+              ullam.
+            </p>
+            <p>Release Date: 15 February 2007</p>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <img
+              src="https://cdn.staticneo.com/w/naruto/Nprofile2.jpg"
+              alt="/"
+            />
+          </div>
+          <div>
+            <h3>Naruto Shippuedin</h3>
+            <p>Rating 6.9</p>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
+              ullam.
+            </p>
+            <p>Release Date: 15 February 2007</p>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <img
+              src="https://cdn.staticneo.com/w/naruto/Nprofile2.jpg"
+              alt="/"
+            />
+          </div>
+          <div>
+            <h3>Naruto Shippuedin</h3>
+            <p>Rating 6.9</p>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
+              ullam.
+            </p>
+            <p>Release Date: 15 February 2007</p>
+          </div>
+        </div>
+
         <div>
           <div>
             <img
