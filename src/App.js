@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const App = () => {
   const [movieSearchInput, setMovieSearchInput] = useState("");
@@ -37,6 +37,7 @@ const App = () => {
             </button>
           </form>
         </div>
+        <div className="container"></div>
       </div>
     </div>
   );
