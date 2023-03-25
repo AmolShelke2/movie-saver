@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { api_key } from "./utils/ApiKey";
 
 const App = () => {
   const [movieSearchInput, setMovieSearchInput] = useState("");
+  const [movies, setMovies] = useState([]);
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
@@ -12,6 +14,18 @@ const App = () => {
   const movieSearchInputHandler = (e) => {
     setMovieSearchInput(e.target.value);
   };
+
+  const getMovies = async () => {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${api_key}&page=1`
+    );
+    const data = await res.json();
+    console.log(data);
+  };
+
+  useEffect(() => {
+    getMovies();
+  }, [api_key]);
 
   return (
     <div className="flex text-center justify-center h-screen py-4 bg-gradient-to-tr from-[#2193b0] to-[#ffc3a0]">
