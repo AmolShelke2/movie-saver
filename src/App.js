@@ -28,7 +28,7 @@ const App = () => {
   }, [api_key]);
 
   return (
-    <div className="h-screen py-4 bg-gradient-to-tr from-[#2193b0] to-[#ffc3a0]">
+    <div className="h-screen py-4 bg-gradient-to-tr from-[#2193b0] to-[#ffc3a0] overflow-hidden">
       <div className="flex justify-center flex-col text-center">
         <h1 className="text-4xl text-white font-bold">Movie Schedule</h1>
         <div className="mb-8">
@@ -50,13 +50,14 @@ const App = () => {
           </form>
         </div>
       </div>
-      <h1 className="font-bold text-4xl px-20 sm:px-10 text-white">Movies</h1>
-      <div className="max-w-[1240px] mx-auto py-16 px-8 text-left grid place-items-center grid-rows-none md:grid-cols-2 gap-2 md:gap-4">
-        <div className="h-full">
+      <h1 className="font-bold text-4xl sm:px-10 text-white">Movies</h1>
+      <div className="max-w-[1240px] py-8 px-4 text-left grid place-items-center grid-rows-none md:grid-cols-2 gap-2 md:gap-4">
+        <div className="h-[500px] bg-[#C3A9FF] rounded-md text-white w-[400px]">
           <div>
             <img
               src="https://cdn.staticneo.com/w/naruto/Nprofile2.jpg"
               alt="/"
+              className="h-[350px] w-full top-0 left-0 rounded-md"
             />
           </div>
           <div>
