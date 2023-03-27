@@ -20,11 +20,15 @@ const App = () => {
       `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${api_key}&page=1`
     );
     const data = await res.json();
+
+    setMovies(data);
   };
 
   useEffect(() => {
     getMovies();
   }, [api_key]);
+
+  console.log(movies.results);
 
   return (
     <div className="h-full py-4 bg-gradient-to-tr from-[#2193b0] to-[#ffc3a0]">
@@ -68,10 +72,7 @@ const App = () => {
             </p>
           </div>
           <div className="flex flex-col text-left px-6 py-2 items-start">
-            <p className="text-md mb-2 space-x-1">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
-              ullam.
-            </p>
+            <p className="text-md mb-2 space-x-1"></p>
             <p>Release Date: 15 February 2007</p>
           </div>
         </div>
