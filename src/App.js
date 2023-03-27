@@ -28,7 +28,7 @@ const App = () => {
     getMovies();
   }, [api_key]);
 
-  console.log(movies.results);
+  console.log(movies.results[0].overview);
 
   return (
     <div className="h-full py-4 bg-gradient-to-tr from-[#2193b0] to-[#ffc3a0]">
@@ -57,7 +57,7 @@ const App = () => {
         Movies
       </h1>
       <div className="max-w-[1240px] mx-auto py-8 px-4 text-left grid place-items-center grid-rows-none md:grid-cols-3 gap-2 md:gap-4">
-        <div className="h-[500px] bg-[#C3A9FF] rounded-md text-white w-[400px]">
+        <div className="h-[550px] bg-[#C3A9FF] rounded-md text-white w-[400px]">
           <div>
             <img
               src="https://cdn.staticneo.com/w/naruto/Nprofile2.jpg"
@@ -72,76 +72,7 @@ const App = () => {
             </p>
           </div>
           <div className="flex flex-col text-left px-6 py-2 items-start">
-            <p className="text-md mb-2 space-x-1"></p>
-            <p>Release Date: 15 February 2007</p>
-          </div>
-        </div>
-
-        <div className="h-[500px] bg-[#C3A9FF] rounded-md text-white w-[400px]">
-          <div>
-            <img
-              src="https://cdn.staticneo.com/w/naruto/Nprofile2.jpg"
-              alt="/"
-              className="h-[350px] w-full top-0 left-0 rounded-md"
-            />
-          </div>
-          <div className="flex justify-between items-center px-6 py-2 mb-1">
-            <h3 className="text-md font-bold">Naruto Shippuedin</h3>
-            <p className="text-center">
-              Rating <span className="font-bold text-yellow-200">6.9</span>
-            </p>
-          </div>
-          <div className="flex flex-col text-left px-6 py-2 items-start">
-            <p className="text-md mb-2 space-x-1">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
-              ullam.
-            </p>
-            <p>Release Date: 15 February 2007</p>
-          </div>
-        </div>
-
-        <div className="h-[500px] bg-[#C3A9FF] rounded-md text-white w-[400px]">
-          <div>
-            <img
-              src="https://cdn.staticneo.com/w/naruto/Nprofile2.jpg"
-              alt="/"
-              className="h-[350px] w-full top-0 left-0 rounded-md"
-            />
-          </div>
-          <div className="flex justify-between items-center px-6 py-2 mb-1">
-            <h3 className="text-md font-bold">Naruto Shippuedin</h3>
-            <p className="text-center">
-              Rating <span className="font-bold text-yellow-200">6.9</span>
-            </p>
-          </div>
-          <div className="flex flex-col text-left px-6 py-2 items-start">
-            <p className="text-md mb-2 space-x-1">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
-              ullam.
-            </p>
-            <p>Release Date: 15 February 2007</p>
-          </div>
-        </div>
-
-        <div className="h-[500px] bg-[#C3A9FF] rounded-md text-white w-[400px]">
-          <div>
-            <img
-              src="https://cdn.staticneo.com/w/naruto/Nprofile2.jpg"
-              alt="/"
-              className="h-[350px] w-full top-0 left-0 rounded-md"
-            />
-          </div>
-          <div className="flex justify-between items-center px-6 py-2 mb-1">
-            <h3 className="text-md font-bold">Naruto Shippuedin</h3>
-            <p className="text-center">
-              Rating <span className="font-bold text-yellow-200">6.9</span>
-            </p>
-          </div>
-          <div className="flex flex-col text-left px-6 py-2 items-start">
-            <p className="text-md mb-2 space-x-1">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
-              ullam.
-            </p>
+            <p className="text-sm mb-2">{movies.results[0].overview}</p>
             <p>Release Date: 15 February 2007</p>
           </div>
         </div>
