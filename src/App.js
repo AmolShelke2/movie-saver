@@ -60,7 +60,7 @@ const App = () => {
         {movies.results.map((movie) => (
           <div
             key={Math.random()}
-            className="h-[500px] bg-[#C3A9FF] rounded-md text-white w-[400px]">
+            className="h-[520px] bg-[#6e3530] rounded-md text-white w-[400px]">
             <div>
               <img
                 src={
