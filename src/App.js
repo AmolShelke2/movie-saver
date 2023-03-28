@@ -26,7 +26,7 @@ const App = () => {
 
   useEffect(() => {
     getMovies();
-  }, [api_key]);
+  }, [movies]);
 
   console.log(movies.results[0].overview);
 
