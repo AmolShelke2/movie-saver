@@ -28,7 +28,7 @@ const App = () => {
   useEffect(() => {
     getMovies().then((data) => setMovies(data));
     console.log(movies);
-  }, [api_key]);
+  }, [movieSearchInput]);
 
   return (
     <div className="h-full py-4 bg-gradient-to-tr from-[#2193b0] to-[#ffc3a0]">
@@ -73,16 +73,19 @@ const App = () => {
               />
             </div>
             <div className="flex justify-between items-center px-6 py-2 mb-1">
-              <h3 className="text-md font-bold">Naruto Shippuedin</h3>
+              <h3 className="text-md font-bold">{movie.original_title}</h3>
               <p className="text-center">
-                Rating <span className="font-bold text-yellow-200">6.9</span>
+                Rating{" "}
+                <span className="font-bold text-yellow-200">
+                  {movie.vote_average}
+                </span>
               </p>
             </div>
             <div className="flex flex-col text-left px-6 py-2 items-start">
               <p className="text-sm overflow-hidden h-[100px] mb-2">
                 {movie.overview}
               </p>
-              <p className="text-md">Release Date: 15 February 2007</p>
+              <p className="text-md">Release Date: {movie.release_date}</p>
             </div>
           </div>
         ))}
