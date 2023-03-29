@@ -3,7 +3,7 @@ import { api_key } from "./utils/ApiKey";
 
 const App = () => {
   const [movieSearchInput, setMovieSearchInput] = useState("");
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState(null);
 
   const imagePath = "https://image.tmdb.org/t/p/w1280";
 
