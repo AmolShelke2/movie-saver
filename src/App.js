@@ -74,8 +74,8 @@ const App = () => {
                 className="h-[300px] w-full top-0 left-0 rounded-md"
               />
             </div>
-            <div className="flex justify-between items-center h-[40px] px-6 py-2 mb-1">
-              <h3 className="text-md font-bold">{movie.original_title}</h3>
+            <div className="flex justify-between items-center text-center h-[50px] px-6 py-2 mb-1">
+              <h3 className="text-sm font-bold">{movie.original_title}</h3>
               <p className="text-center">
                 Rating{" "}
                 <span className="font-bold text-yellow-200">
