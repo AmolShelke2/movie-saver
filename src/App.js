@@ -22,13 +22,15 @@ const App = () => {
       `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${api_key}&page=1`
     );
     const data = await res.json();
-    return data;
+    setMovies(data);
   };
 
   useEffect(() => {
-    getMovies().then((data) => setMovies(data));
+    getMovies();
     console.log(movies);
-  }, [movieSearchInput]);
+  }, [setMovieSearchInput]);
+
+  console.log(movies);
 
   return (
     <div className="h-full py-4 bg-gradient-to-tr from-[#2193b0] to-[#ffc3a0]">
@@ -72,7 +74,7 @@ const App = () => {
                 className="h-[300px] w-full top-0 left-0 rounded-md"
               />
             </div>
-            <div className="flex justify-between items-center px-6 py-2 mb-1">
+            <div className="flex justify-between items-center h-[40px] px-6 py-2 mb-1">
               <h3 className="text-md font-bold">{movie.original_title}</h3>
               <p className="text-center">
                 Rating{" "}
@@ -82,7 +84,7 @@ const App = () => {
               </p>
             </div>
             <div className="flex flex-col text-left px-6 py-2 items-start">
-              <p className="text-sm overflow-hidden h-[100px] mb-2">
+              <p className="text-sm overflow-hidden h-[80px] mb-2">
                 {movie.overview}
               </p>
               <p className="text-md">Release Date: {movie.release_date}</p>
