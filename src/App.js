@@ -3,7 +3,7 @@ import { api_key } from "./utils/ApiKey";
 
 const App = () => {
   const [movieSearchInput, setMovieSearchInput] = useState("");
-  const [movies, setMovies] = useState(null);
+  const [movies, setMovies] = useState([]);
 
   const imagePath = "https://image.tmdb.org/t/p/w1280";
 
@@ -17,20 +17,18 @@ const App = () => {
     setMovieSearchInput(e.target.value);
   };
 
+  useEffect(() => {
+    getMovies();
+  }, []);
+
   const getMovies = async () => {
     const res = await fetch(
       `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${api_key}&page=1`
     );
+
     const data = await res.json();
     setMovies(data);
   };
-
-  useEffect(() => {
-    getMovies();
-    console.log(movies);
-  }, [setMovieSearchInput]);
-
-  console.log(movies);
 
   return (
     <div className="h-full py-4 bg-gradient-to-tr from-[#2193b0] to-[#ffc3a0]">
@@ -59,38 +57,39 @@ const App = () => {
         Movies
       </h1>
       <div className="max-w-[1240px] mx-auto py-8 px-4 text-left grid place-items-center grid-rows-none md:grid-cols-3 gap-2 md:gap-4">
-        {movies.results.map((movie) => (
-          <div
-            key={Math.random()}
-            className="h-[520px] bg-[#6e3530] rounded-md text-white w-[400px]">
-            <div>
-              <img
-                src={
-                  movie.backdrop_path
-                    ? imagePath + movie.backdrop_path
-                    : "https://staticc.sportskeeda.com/editor/2023/02/d7a96-16775298337085-1920.jpg"
-                }
-                alt="/"
-                className="h-[300px] w-full top-0 left-0 rounded-md"
-              />
+        {movies.length &&
+          movies.results.map((movie) => (
+            <div
+              key={Math.random()}
+              className="h-[520px] bg-[#6e3530] rounded-md text-white w-[400px]">
+              <div>
+                <img
+                  src={
+                    movie.backdrop_path
+                      ? imagePath + movie.backdrop_path
+                      : "https://staticc.sportskeeda.com/editor/2023/02/d7a96-16775298337085-1920.jpg"
+                  }
+                  alt="/"
+                  className="h-[300px] w-full top-0 left-0 rounded-md"
+                />
+              </div>
+              <div className="flex justify-between items-center text-center h-[50px] px-6 py-2 mb-1">
+                <h3 className="text-sm font-bold">{movie.original_title}</h3>
+                <p className="text-center">
+                  Rating{" "}
+                  <span className="font-bold text-yellow-200">
+                    {movie.vote_average}
+                  </span>
+                </p>
+              </div>
+              <div className="flex flex-col text-left px-6 py-2 items-start">
+                <p className="text-sm overflow-hidden h-[80px] mb-2">
+                  {movie.overview}
+                </p>
+                <p className="text-md">Release Date: {movie.release_date}</p>
+              </div>
             </div>
-            <div className="flex justify-between items-center text-center h-[50px] px-6 py-2 mb-1">
-              <h3 className="text-sm font-bold">{movie.original_title}</h3>
-              <p className="text-center">
-                Rating{" "}
-                <span className="font-bold text-yellow-200">
-                  {movie.vote_average}
-                </span>
-              </p>
-            </div>
-            <div className="flex flex-col text-left px-6 py-2 items-start">
-              <p className="text-sm overflow-hidden h-[80px] mb-2">
-                {movie.overview}
-              </p>
-              <p className="text-md">Release Date: {movie.release_date}</p>
-            </div>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );
