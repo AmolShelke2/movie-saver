@@ -1,59 +1,41 @@
 import React, { useState, useEffect } from "react";
-import { api_key } from "./utils/ApiKey";
+const API_URL = "https://www.omdbapi.com?apikey=6df9f16d";
 
 const App = () => {
   const [movieSearchInput, setMovieSearchInput] = useState("");
   const [movies, setMovies] = useState([]);
 
-  const SEARCH_API =
-    'https://api.themoviedb.org/3/search/movie?api_key=3fd2be6f0c70a2a598f084ddfb75487c&query="';
-
-  const imagePath = "https://image.tmdb.org/t/p/w1280";
-
   useEffect(() => {
-    getMovies("Bollywood");
+    getMovies("Batman");
   }, []);
 
-  const getMovies = async (url) => {
-    const res = await fetch(url);
+  const getMovies = async (movieName) => {
+    const response = await fetch(`${API_URL}&s=${movieName}`);
 
-    const data = await res.json();
-    setMovies(data.results);
+    const data = await response.json();
+
+    setMovies(data.Search);
   };
 
-  const formSubmitHandler = (e) => {
-    e.preventDefault();
-
-    if (movieSearchInput && movieSearchInput !== "") {
-      getMovies(SEARCH_API + movieSearchInput);
-
-      setMovieSearchInput("");
-    } else {
-      window.location.reload();
-    }
-  };
-
-  const movieSearchInputHandler = (e) => {
-    setMovieSearchInput(e.target.value);
-  };
+  console.log(movies);
 
   return (
     <div className="h-full py-4 bg-gradient-to-tr from-[#2193b0] to-[#ffc3a0]">
       <div className="flex justify-center flex-col text-center">
         <h1 className="text-4xl text-white font-bold">Movie Schedule</h1>
         <div className="mb-8">
-          <form className="p-4" onSubmit={formSubmitHandler}>
+          <form className="p-4" onSubmit={() => getMovies(movieSearchInput)}>
             <input
               type="text"
               placeholder="Enter Movie Name"
               className="bg-white text-black font-bold rounded-md py-4 px-8 shadow-sm w-[300px] focus:outline-none"
               value={movieSearchInput}
-              onChange={movieSearchInputHandler}
+              onChange={(e) => setMovieSearchInput(e.target.value)}
             />
 
             <button
               type="submit"
-              onSubmit={formSubmitHandler}
+              onSubmit={() => getMovies(movieSearchInput)}
               className="ml-2 bg-[#2193b0] shadow-md text-white px-6 py-2 rounded-md">
               Search
             </button>
@@ -64,8 +46,8 @@ const App = () => {
         Movies
       </h1>
       <div className="max-w-[1240px] mx-auto py-8 px-4 text-left grid place-items-center grid-rows-none md:grid-cols-3 gap-2 md:gap-4">
-        {movies.length &&
-          movies.results.map((movie) => (
+        {/* {movies.length &&
+          movies.map((movie) => (
             <div
               key={Math.random()}
               className="h-[520px] bg-[#6e3530] rounded-md text-white w-[400px]">
@@ -74,7 +56,7 @@ const App = () => {
                   src={
                     movie.backdrop_path
                       ? imagePath + movie.backdrop_path
-                      : "https://staticc.sportskeeda.com/editor/2023/02/d7a96-16775298337085-1920.jpg"
+                      : "https://aeroclub-issoire.fr/wp-content/uploads/2020/05/image-not-found-300x225.jpg"
                   }
                   alt="/"
                   className="h-[300px] w-full top-0 left-0 rounded-md"
@@ -96,7 +78,7 @@ const App = () => {
                 <p className="text-md">Release Date: {movie.release_date}</p>
               </div>
             </div>
-          ))}
+          ))} */}
       </div>
     </div>
   );
