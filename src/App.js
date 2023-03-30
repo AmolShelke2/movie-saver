@@ -46,18 +46,14 @@ const App = () => {
         Movies
       </h1>
       <div className="max-w-[1240px] mx-auto py-8 px-4 text-left grid place-items-center grid-rows-none md:grid-cols-3 gap-2 md:gap-4">
-        {/* {movies.length &&
+        {movies.length &&
           movies.map((movie) => (
             <div
               key={Math.random()}
               className="h-[520px] bg-[#6e3530] rounded-md text-white w-[400px]">
               <div>
                 <img
-                  src={
-                    movie.backdrop_path
-                      ? imagePath + movie.backdrop_path
-                      : "https://aeroclub-issoire.fr/wp-content/uploads/2020/05/image-not-found-300x225.jpg"
-                  }
+                  src={movie.poster}
                   alt="/"
                   className="h-[300px] w-full top-0 left-0 rounded-md"
                 />
@@ -78,7 +74,7 @@ const App = () => {
                 <p className="text-md">Release Date: {movie.release_date}</p>
               </div>
             </div>
-          ))} */}
+          ))}
       </div>
     </div>
   );
