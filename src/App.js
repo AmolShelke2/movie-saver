@@ -5,29 +5,36 @@ const App = () => {
   const [movieSearchInput, setMovieSearchInput] = useState("");
   const [movies, setMovies] = useState([]);
 
+  const SEARCH_API =
+    'https://api.themoviedb.org/3/search/movie?api_key=3fd2be6f0c70a2a598f084ddfb75487c&query="';
+
   const imagePath = "https://image.tmdb.org/t/p/w1280";
+
+  useEffect(() => {
+    getMovies("Bollywood");
+  }, []);
+
+  const getMovies = async (url) => {
+    const res = await fetch(url);
+
+    const data = await res.json();
+    setMovies(data.results);
+  };
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
 
-    setMovieSearchInput("");
+    if (movieSearchInput && movieSearchInput !== "") {
+      getMovies(SEARCH_API + movieSearchInput);
+
+      setMovieSearchInput("");
+    } else {
+      window.location.reload();
+    }
   };
 
   const movieSearchInputHandler = (e) => {
     setMovieSearchInput(e.target.value);
-  };
-
-  useEffect(() => {
-    getMovies();
-  }, []);
-
-  const getMovies = async () => {
-    const res = await fetch(
-      `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${api_key}&page=1`
-    );
-
-    const data = await res.json();
-    setMovies(data);
   };
 
   return (
