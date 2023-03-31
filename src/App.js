@@ -64,9 +64,9 @@ const App = () => {
                 />
               </div>
               <div className="flex flex-col justify-start items-start text-left pt-4 mb-1 px-2">
-                <h3 className="text-sm font-bold">{movie.Title}</h3>
+                <h3 className="text-sm mb-1 font-bold">{movie.Title}</h3>
                 <p className="text-center">
-                  Type {""}
+                  Type: {""}
                   <span className="font-bold text-yellow-200">
                     {movie.Type}
                   </span>
