@@ -66,9 +66,9 @@ const App = () => {
               <div className="flex flex-col justify-start items-start text-left pt-4 mb-1 px-2">
                 <h3 className="text-sm font-bold">{movie.Title}</h3>
                 <p className="text-center">
-                  imdbID {""}
+                  Type {""}
                   <span className="font-bold text-yellow-200">
-                    {movie.imdbID}
+                    {movie.Type}
                   </span>
                 </p>
               </div>
