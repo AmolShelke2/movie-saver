@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Movie Scheduler
+
+A basic movie scheduler created with ReactJS and Tailwind CSS.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
