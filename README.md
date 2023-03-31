@@ -2,6 +2,29 @@
 
 A basic movie scheduler created with ReactJS and Tailwind CSS.
 
+<hr>
+
+## Tech Stack
+
+- ReactJS
+- Tailwind CSS
+
+<hr>
+
+## Features
+
+- Search and find movies of your choice
+- add them in the scheduler and come and visit anytime it will be there.
+- used localStorage for storing the scheduled movies.
+
+<hr>
+
+## Preview
+
+### Live Preview
+
+### screenshot
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
