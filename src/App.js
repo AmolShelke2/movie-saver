@@ -76,7 +76,7 @@ const App = () => {
               <div className="flex justify-between pr-4">
                 <p className="text-sm px-2 mt-1">Released year: {movie.Year}</p>
 
-                <button className="text-sm">watch later</button>
+                <button className="text-sm bg-white">watch later</button>
               </div>
             </div>
           ))}
