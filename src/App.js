@@ -73,10 +73,10 @@ const App = () => {
                 </p>
               </div>
 
-              <div className="flex justify-between">
-                <p className="text-sm px-2 mt-1 absolute">
-                  Released year: {movie.Year}
-                </p>
+              <div className="flex justify-between pr-4">
+                <p className="text-sm px-2 mt-1">Released year: {movie.Year}</p>
+
+                <button className="text-sm">watch later</button>
               </div>
             </div>
           ))}
