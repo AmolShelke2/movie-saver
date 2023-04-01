@@ -63,7 +63,7 @@ const App = () => {
                   className="h-[400px] w-full top-0 left-0 rounded-md"
                 />
               </div>
-              <div className="flex flex-col justify-start items-start text-left pt-4 mb-1 px-2">
+              <div className="flex flex-col justify-start items-start text-left pt-4 px-2">
                 <h3 className="text-sm mb-1 font-bold">{movie.Title}</h3>
                 <p className="text-center">
                   Type: {""}
@@ -73,10 +73,12 @@ const App = () => {
                 </p>
               </div>
 
-              <div className="flex justify-between pr-4">
+              <div className="flex justify-between items-center pr-4">
                 <p className="text-sm px-2 mt-1">Released year: {movie.Year}</p>
 
-                <button className="text-sm bg-white">watch later</button>
+                <button className="text-sm capitalize bg-[white] text-black px-4 py-2 rounded-md">
+                  watch later
+                </button>
               </div>
             </div>
           ))}
