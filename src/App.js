@@ -34,6 +34,7 @@ const App = () => {
     <div className="h-full py-4 bg-gradient-to-tr from-[#2193b0] to-[#ffc3a0]">
       <div className="flex justify-center flex-col text-center">
         <h1 className="text-4xl text-white font-bold">Movie Schedule</h1>
+        <div className="flex justify-end"></div>
         <div className="mb-8">
           <form className="p-4" onSubmit={formSubmitHandler}>
             <input
