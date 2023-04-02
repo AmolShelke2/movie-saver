@@ -30,8 +30,6 @@ const App = () => {
     setWatchLaterMovies(newWatchLaterMovies);
   };
 
-  console.log(watchLaterMovies);
-
   return (
     <div className="h-full py-4 bg-gradient-to-tr from-[#2193b0] to-[#ffc3a0]">
       <div className="flex justify-center flex-col text-center">
@@ -84,7 +82,9 @@ const App = () => {
               <div className="flex justify-between items-center pr-4">
                 <p className="text-sm px-2 mt-1">Released year: {movie.Year}</p>
 
-                <button className="text-sm capitalize bg-[white] text-black px-4 py-2 rounded-md">
+                <button
+                  className="text-sm capitalize bg-[white] text-black px-4 py-2 rounded-md"
+                  onClick={() => handleAddToWatchLater(movie)}>
                   watch later
                 </button>
               </div>
