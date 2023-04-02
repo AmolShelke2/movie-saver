@@ -68,7 +68,9 @@ const App = () => {
 
           <div>
             <h3 className="text-md">Attack on Titan</h3>
-            <p className="text-sm">Type: series</p>
+            <p>
+              Type: <span className="font-bold text-yellow-200">series</span>
+            </p>
           </div>
         </div>
       </div>
