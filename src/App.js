@@ -30,11 +30,12 @@ const App = () => {
     setWatchLaterMovies(newWatchLaterMovies);
   };
 
+  console.log(watchLaterMovies);
+
   return (
     <div className="h-full py-4 bg-gradient-to-tr from-[#2193b0] to-[#ffc3a0]">
       <div className="flex justify-center flex-col text-center">
         <h1 className="text-4xl text-white font-bold">Movie Schedule</h1>
-        <div className="flex justify-end"></div>
         <div className="mb-8">
           <form className="p-4" onSubmit={formSubmitHandler}>
             <input
@@ -54,6 +55,23 @@ const App = () => {
           </form>
         </div>
       </div>
+
+      <div className=" flex justify-end pr-3">
+        <div className="flex items-start justify-between w-[300px] bg-black py-2 px-2 rounded-sm text-white">
+          <div>
+            <img
+              src="https://4kwallpapers.com/images/walls/thumbs_2t/10446.jpg"
+              alt=""
+              className="h-[100px] w-[100px] rounded-[50%]"
+            />
+          </div>
+
+          <div>
+            <h3>Attack on Titan</h3>
+          </div>
+        </div>
+      </div>
+
       <h1 className="font-bold text-6xl sm:px-10 text-white text-center">
         Movies
       </h1>
