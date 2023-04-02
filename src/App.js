@@ -57,17 +57,18 @@ const App = () => {
       </div>
 
       <div className=" flex justify-end pr-3">
-        <div className="flex items-start justify-between w-[300px] bg-black py-2 px-2 rounded-sm text-white">
-          <div>
+        <div className="flex items-center text-centers justify-start w-[250px] bg-black py-2 px-2 rounded-lg text-white">
+          <div className="mr-3">
             <img
               src="https://4kwallpapers.com/images/walls/thumbs_2t/10446.jpg"
               alt=""
-              className="h-[100px] w-[100px] rounded-[50%]"
+              className="h-[80px] w-[80px] rounded-[50%]"
             />
           </div>
 
           <div>
-            <h3>Attack on Titan</h3>
+            <h3 className="text-md">Attack on Titan</h3>
+            <p className="text-sm">Type: series</p>
           </div>
         </div>
       </div>
