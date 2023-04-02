@@ -4,6 +4,7 @@ const API_URL = "https://www.omdbapi.com?apikey=6df9f16d";
 const App = () => {
   const [movieSearchInput, setMovieSearchInput] = useState("");
   const [movies, setMovies] = useState([]);
+  const [watchLaterMovies, setWatchLaterMovies] = useState([]);
 
   useEffect(() => {
     getMovies("Naruto");
@@ -23,6 +24,13 @@ const App = () => {
     getMovies(movieSearchInput);
     setMovieSearchInput("");
   };
+
+  const handleAddToWatchLater = (moviesData) => {
+    const newWatchLaterMovies = [...watchLaterMovies, moviesData];
+    setWatchLaterMovies(newWatchLaterMovies);
+  };
+
+  console.log(watchLaterMovies);
 
   return (
     <div className="h-full py-4 bg-gradient-to-tr from-[#2193b0] to-[#ffc3a0]">
