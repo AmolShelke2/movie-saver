@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { BiMoviePlay } from "react-icons/bi";
+
 const API_URL = "https://www.omdbapi.com?apikey=6df9f16d";
 
 const App = () => {
   const [movieSearchInput, setMovieSearchInput] = useState("");
   const [movies, setMovies] = useState([]);
   const [watchLaterMovies, setWatchLaterMovies] = useState([]);
+  const [WatchLaterDropDown, setWatchLaterDropDown] = useState(false);
 
   useEffect(() => {
-    getMovies("Naruto");
+    getMovies("I");
   }, []);
 
   const getMovies = async (movieName) => {
@@ -16,6 +19,10 @@ const App = () => {
     const data = await response.json();
 
     setMovies(data.Search);
+  };
+
+  const handleWatchLaterDropDown = () => {
+    setWatchLaterDropDown(!WatchLaterDropDown);
   };
 
   const formSubmitHandler = (e) => {
@@ -56,20 +63,28 @@ const App = () => {
         </div>
       </div>
 
+      <div className="fixed top-2 right-2 flex flex-col items-center justify-end bg-white rounded-md">
+        <BiMoviePlay
+          className="h-10 w-10 cursor-pointer font-bold"
+          onClick={handleWatchLaterDropDown}
+        />
+        <span className="text-md font-bold">{watchLaterMovies.length}</span>
+      </div>
+
       <div
         className={
-          watchLaterMovies.length
-            ? "flex flex-col h-[250px] w-[320px] bg-white gap-2 justify-start items-center p-2 fixed top-2 right-2 overflow-scroll rounded-md"
+          WatchLaterDropDown
+            ? "flex flex-col h-[250px] w-[320px] bg-white gap-2 justify-start items-center p-2 fixed top-20 right-2  overflow-x-hidden overflow-scroll rounded-md"
             : "hidden"
         }>
         {watchLaterMovies.length ? (
           watchLaterMovies.map((watchLaterMovie) => (
-            <div className="flex items-center text-centers justify-start w-[300px] bg-black py-2 px-2 rounded-lg text-white">
+            <div className="flex items-center justify-start w-[300px] border-black border-b-2 bg-black py-2 px-2 rounded-lg text-white">
               <div className="mr-3">
                 <img
                   src={watchLaterMovie.Poster}
                   alt=""
-                  className="h-[80px] w-[80px] rounded-[50%]"
+                  className="h-[60px] w-[60px] rounded-[50%] object-cover"
                 />
               </div>
 
@@ -95,7 +110,7 @@ const App = () => {
         Movies
       </h1>
       <div className="max-w-[1240px] mx-auto py-8 px-4 text-left grid place-items-center grid-rows-none md:grid-cols-3 gap-2 md:gap-4">
-        {movies.length &&
+        {movies?.length > 0 ? (
           movies.map((movie) => (
             <div
               key={Math.random()}
@@ -127,7 +142,10 @@ const App = () => {
                 </button>
               </div>
             </div>
-          ))}
+          ))
+        ) : (
+          <h3 className="text-center text-lg font-bold">No Movies found</h3>
+        )}
       </div>
     </div>
   );
