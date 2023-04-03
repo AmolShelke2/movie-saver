@@ -144,7 +144,9 @@ const App = () => {
             </div>
           ))
         ) : (
-          <h3 className="text-center text-lg font-bold">No Movies found</h3>
+          <h3 className="h-screen text-center text-lg font-bold">
+            No Movies found
+          </h3>
         )}
       </div>
     </div>
