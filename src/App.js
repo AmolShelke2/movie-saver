@@ -56,23 +56,39 @@ const App = () => {
         </div>
       </div>
 
-      <div className=" flex justify-end pr-3">
-        <div className="flex items-center text-centers justify-start w-[250px] bg-black py-2 px-2 rounded-lg text-white">
-          <div className="mr-3">
-            <img
-              src="https://4kwallpapers.com/images/walls/thumbs_2t/10446.jpg"
-              alt=""
-              className="h-[80px] w-[80px] rounded-[50%]"
-            />
-          </div>
+      <div
+        className={
+          watchLaterMovies.length
+            ? "flex flex-col h-[250px] w-[320px] bg-white gap-2 justify-start items-center p-2 fixed top-2 right-2 overflow-scroll rounded-md"
+            : "hidden"
+        }>
+        {watchLaterMovies.length ? (
+          watchLaterMovies.map((watchLaterMovie) => (
+            <div className="flex items-center text-centers justify-start w-[300px] bg-black py-2 px-2 rounded-lg text-white">
+              <div className="mr-3">
+                <img
+                  src={watchLaterMovie.Poster}
+                  alt=""
+                  className="h-[80px] w-[80px] rounded-[50%]"
+                />
+              </div>
 
-          <div>
-            <h3 className="text-md">Attack on Titan</h3>
-            <p>
-              Type: <span className="font-bold text-yellow-200">series</span>
-            </p>
+              <div>
+                <h3 className="text-sm">{watchLaterMovie.Title}</h3>
+                <p>
+                  Type:{" "}
+                  <span className="font-bold text-yellow-200">
+                    {watchLaterMovie.Type}
+                  </span>
+                </p>
+              </div>
+            </div>
+          ))
+        ) : (
+          <div className="flex flex-col justify-center items-center h-[100px]">
+            <h1 className="text-center">No Movies found</h1>
           </div>
-        </div>
+        )}
       </div>
 
       <h1 className="font-bold text-6xl sm:px-10 text-white text-center">
