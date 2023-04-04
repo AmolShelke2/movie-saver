@@ -10,7 +10,7 @@ const App = () => {
   const [WatchLaterDropDown, setWatchLaterDropDown] = useState(false);
 
   useEffect(() => {
-    getMovies("I");
+    getMovies("Naruto");
   }, []);
 
   const getMovies = async (movieName) => {
@@ -48,7 +48,7 @@ const App = () => {
             <input
               type="text"
               placeholder="Enter Movie Name"
-              className="bg-white text-black font-bold rounded-md py-4 px-8 shadow-sm w-[300px] focus:outline-none"
+              className="bg-white text-black font-bold rounded-md mb-2 py-4 px-8 shadow-sm w-[300px] focus:outline-none"
               value={movieSearchInput}
               onChange={(e) => setMovieSearchInput(e.target.value)}
             />
@@ -79,7 +79,9 @@ const App = () => {
         }>
         {watchLaterMovies.length ? (
           watchLaterMovies.map((watchLaterMovie) => (
-            <div className="flex items-center justify-start w-[300px] border-black border-b-2 bg-black py-2 px-2 rounded-lg text-white">
+            <div
+              key={Math.random()}
+              className="flex items-center justify-start w-[300px] border-black border-b-2 bg-black py-2 px-2 rounded-lg text-white">
               <div className="mr-3">
                 <img
                   src={watchLaterMovie.Poster}
@@ -106,15 +108,15 @@ const App = () => {
         )}
       </div>
 
-      <h1 className="font-bold text-6xl sm:px-10 text-white text-center">
+      <h1 className="font-bold text-6xl mb-4 sm:px-10 text-white text-center">
         Movies
       </h1>
-      <div className="max-w-[1240px] mx-auto py-8 px-4 text-left grid place-items-center grid-rows-none md:grid-cols-3 gap-2 md:gap-4">
+      <div className=" max-w-[1240px] mx-auto flex justify-center gap-4 flex-wrap md:justify-center lg:justify-start">
         {movies?.length > 0 ? (
           movies.map((movie) => (
             <div
               key={Math.random()}
-              className="h-[520px] bg-[#6e3530] rounded-md text-white w-[400px]">
+              className="h-[520px] w-[400px] bg-[#6e3530] rounded-md text-white">
               <div>
                 <img
                   src={movie.Poster}
