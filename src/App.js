@@ -68,7 +68,9 @@ const App = () => {
           className="h-10 w-10 cursor-pointer font-bold"
           onClick={handleWatchLaterDropDown}
         />
-        <span className="text-md font-bold">{watchLaterMovies.length}</span>
+        <span className="text-md font-bold bg-black w-full text-white text-center">
+          {watchLaterMovies.length}
+        </span>
       </div>
 
       <div
@@ -103,7 +105,7 @@ const App = () => {
           ))
         ) : (
           <div className="flex flex-col justify-center items-center h-[100px]">
-            <h1 className="text-center">No Movies found</h1>
+            <h1 className="text-center">No watch later found</h1>
           </div>
         )}
       </div>
