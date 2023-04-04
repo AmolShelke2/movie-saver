@@ -1,6 +1,6 @@
 # Movie Scheduler
 
-A basic movie scheduler created with ReactJS and Tailwind CSS.
+A basic movie saver created with ReactJS and Tailwind CSS. User can add movies to watch later and come and look into the watchLater lists.
 
 <hr>
 
