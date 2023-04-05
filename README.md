@@ -22,6 +22,9 @@ A basic movie saver created with ReactJS and Tailwind CSS. User can add movies t
 ## Preview
 
 ### Live Preview
+[Movie Saver](https://movie-saver.vercel.app/)
+
+<hr>
 
 ### screenshot
 ![Movie saver app - Google Chrome 04-04-2023 3 06 34 PM](https://user-images.githubusercontent.com/95171638/229751810-4e8cd2fa-0fe5-4e11-b2b8-21efc679941a.png)
