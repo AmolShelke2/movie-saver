@@ -35,6 +35,11 @@ const App = () => {
   const handleAddToWatchLater = (moviesData) => {
     const newWatchLaterMovies = [...watchLaterMovies, moviesData];
     setWatchLaterMovies(newWatchLaterMovies);
+    saveWatchLaterMoviesToLocaleStorage(Math.random(), moviesData);
+  };
+
+  const saveWatchLaterMoviesToLocaleStorage = (id, movie) => {
+    localStorage.setItem(id, JSON.stringify(movie));
   };
 
   console.log(watchLaterMovies);
