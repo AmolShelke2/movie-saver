@@ -35,14 +35,7 @@ const App = () => {
   const handleAddToWatchLater = (moviesData) => {
     const newWatchLaterMovies = [...watchLaterMovies, moviesData];
     setWatchLaterMovies(newWatchLaterMovies);
-    saveWatchLaterMoviesToLocaleStorage(Math.random(), moviesData);
   };
-
-  const saveWatchLaterMoviesToLocaleStorage = (id, movie) => {
-    localStorage.setItem(id, JSON.stringify(movie));
-  };
-
-  console.log(watchLaterMovies);
 
   return (
     <div className="h-full py-4 bg-gradient-to-tr from-[#2193b0] to-[#ffc3a0]">
