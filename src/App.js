@@ -103,7 +103,7 @@ const App = () => {
           ))
         ) : (
           <div className="flex flex-col justify-center items-center h-[100px]">
-            <h1 className="text-center capitalize">No watch later found</h1>
+            <h1 className="text-center">No Watch Later Found</h1>
           </div>
         )}
       </div>
