@@ -14,7 +14,7 @@ A basic movie saver created with ReactJS and Tailwind CSS. User can add movies t
 ## Features
 
 - Search and find movies of your choice
-- add them in the scheduler and come and visit anytime it will be there.
+- add them in the Watch later.
 
 <hr>
 
